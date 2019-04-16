@@ -1,0 +1,54 @@
+﻿@using SIR_Zaverecna_Prace.Code
+@model SIR_Zaverecna_Prace.Models.GameCreatorViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>GameCreatorViewModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PublishedAt" class="control-label"></label>
+                <input asp-for="PublishedAt" class="form-control" />
+                <span asp-validation-for="PublishedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Genre" class="control-label"></label>
+                <select asp-for="Genre" asp-items="Html.GetEnumSelectList<GameGenre>()" class="form-control"></select>
+                <span asp-validation-for="Genre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PublisherId" class="control-label"></label>
+                <select asp-for="PublisherId" asp-items="@(new SelectList(Model.Publishers, "Key", "Value"))" class="form-control"></select>
+                <span asp-validation-for="PublisherId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeveloperId" class="control-label"></label>
+                <select asp-for="DeveloperId" asp-items="@(new SelectList(Model.Developers, "Key", "Value"))" class="form-control"></select>
+                <span asp-validation-for="DeveloperId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

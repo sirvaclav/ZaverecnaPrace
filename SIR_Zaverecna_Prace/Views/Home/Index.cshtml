@@ -1,0 +1,19 @@
+﻿@model IEnumerable<SIR_Zaverecna_Prace.Entities.Game>
+
+@{
+    ViewData["Title"] = "MainPage";
+}
+
+<div class="row">
+    <a asp-action="Create" asp-controller="Publishers" class="btn btn-primary">Nový vydavatel</a>
+    <a asp-action="Create" asp-controller="Developers" class="btn btn-primary">Nový vývojář</a>
+    <a asp-action="Create" asp-controller="Games" class="btn btn-primary">Nová hra</a>
+    @foreach (var game in Model)
+    {
+        <h4>
+            @game.Name, @game.PublishedAt
+            <a asp-action="Edit" asp-controller="Brand" class="btn btn-warning" asp-route-id="@game.Id">Editovat</a>
+        </h4>
+
+    }
+</div>
