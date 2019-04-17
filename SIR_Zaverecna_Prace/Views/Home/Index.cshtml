@@ -4,16 +4,19 @@
     ViewData["Title"] = "MainPage";
 }
 
-<div class="row">
-    <a asp-action="Create" asp-controller="Publishers" class="btn btn-primary">Nový vydavatel</a>
-    <a asp-action="Create" asp-controller="Developers" class="btn btn-primary">Nový vývojář</a>
-    <a asp-action="Create" asp-controller="Games" class="btn btn-primary">Nová hra</a>
-    @foreach (var game in Model)
-    {
-        <h4>
-            @game.Name, @game.PublishedAt
-            <a asp-action="Edit" asp-controller="Brand" class="btn btn-warning" asp-route-id="@game.Id">Editovat</a>
-        </h4>
-
-    }
+<div>
+    <div>
+        <a asp-action="Manage" asp-controller="Publishers" class="btn btn-primary">Spravovat vydavatele</a>
+        <a asp-action="Manage" asp-controller="Developers" class="btn btn-primary">Spravovat vývojáře</a>
+        <a asp-action="Manage" asp-controller="Games" class="btn btn-primary">Spravovat hry</a>
+    </div>
+    <div>
+        @foreach (var game in Model)
+         {
+            <h4>
+                @game.Name, @game.PublishedAt, @game.Genre
+            </h4>
+            <a asp-action="Details" asp-controller="Games" asp-route-id="@game.Id" class="btn btn-secondary">Detail</a>
+         }
+    </div>
 </div>

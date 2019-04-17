@@ -60,7 +60,7 @@ namespace SIR_Zaverecna_Prace.Controllers
             {
                 _context.Add(publisher);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction(nameof(Index));
             }
             return View(publisher);
         }
@@ -111,7 +111,7 @@ namespace SIR_Zaverecna_Prace.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction(nameof(Index));
             }
             return View(publisher);
         }
@@ -142,12 +142,17 @@ namespace SIR_Zaverecna_Prace.Controllers
             var publisher = await _context.Publishers.FindAsync(id);
             _context.Publishers.Remove(publisher);
             await _context.SaveChangesAsync();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction(nameof(Index));
         }
 
         private bool PublisherExists(int id)
         {
             return _context.Publishers.Any(e => e.Id == id);
+        }
+
+        public IActionResult Manage()
+        {
+            return RedirectToAction(nameof(Index));
         }
     }
 }

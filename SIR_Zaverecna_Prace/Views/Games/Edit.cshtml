@@ -1,5 +1,5 @@
 ﻿@using SIR_Zaverecna_Prace.Code
-@model SIR_Zaverecna_Prace.Models.GameEditorViewModel
+@model SIR_Zaverecna_Prace.Entities.Game
 
 @{
     ViewData["Title"] = "Edit";
@@ -30,8 +30,17 @@
                 <span asp-validation-for="Genre" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="PublisherId" class="control-label"></label>
+                <select asp-for="PublisherId" class="form-control" asp-items="ViewBag.PublisherId"></select>
+                <span asp-validation-for="PublisherId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeveloperId" class="control-label"></label>
+                <select asp-for="DeveloperId" class="form-control" asp-items="ViewBag.DeveloperId"></select>
+                <span asp-validation-for="DeveloperId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-default" formaction="@Url.Action("Edit", "Game")" />
-                <input type="submit" value="Delete" class="btn btn-danger" formaction="@Url.Action("Delete", "Game")" />
             </div>
         </form>
     </div>

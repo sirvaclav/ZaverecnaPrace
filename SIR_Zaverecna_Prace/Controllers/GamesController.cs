@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SIR_Zaverecna_Prace.Data;
 using SIR_Zaverecna_Prace.Entities;
+using SIR_Zaverecna_Prace.Models;
 
 namespace SIR_Zaverecna_Prace.Controllers
 {
@@ -51,7 +52,13 @@ namespace SIR_Zaverecna_Prace.Controllers
         {
             ViewData["DeveloperId"] = new SelectList(_context.Developers, "Id", "Name");
             ViewData["PublisherId"] = new SelectList(_context.Publishers, "Id", "Name");
-            return View();
+
+            var model = new GameCreatorViewModel();
+
+            model.Publishers = _context.Publishers.ToDictionary(v => v.Id, v => v.Name);
+            model.Developers = _context.Developers.ToDictionary(v => v.Id, v => v.Name);
+
+            return View(model);
         }
 
         // POST: Games/Create
@@ -66,7 +73,7 @@ namespace SIR_Zaverecna_Prace.Controllers
                 _context.Add(game);
                 await _context.SaveChangesAsync();
 
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction(nameof(Index));
             }
             ViewData["DeveloperId"] = new SelectList(_context.Developers, "Id", "Name", game.DeveloperId);
             ViewData["PublisherId"] = new SelectList(_context.Publishers, "Id", "Name", game.PublisherId);
@@ -121,7 +128,7 @@ namespace SIR_Zaverecna_Prace.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction(nameof(Index));
             }
             ViewData["DeveloperId"] = new SelectList(_context.Developers, "Id", "Name", game.DeveloperId);
             ViewData["PublisherId"] = new SelectList(_context.Publishers, "Id", "Name", game.PublisherId);
@@ -145,7 +152,7 @@ namespace SIR_Zaverecna_Prace.Controllers
                 return NotFound();
             }
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction(nameof(Index));
         }
 
         // POST: Games/Delete/5
@@ -156,12 +163,17 @@ namespace SIR_Zaverecna_Prace.Controllers
             var game = await _context.Games.FindAsync(id);
             _context.Games.Remove(game);
             await _context.SaveChangesAsync();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction(nameof(Index));
         }
 
         private bool GameExists(int id)
         {
             return _context.Games.Any(e => e.Id == id);
+        }
+
+        public IActionResult Manage()
+        {
+            return RedirectToAction(nameof(Index));
         }
     }
 }

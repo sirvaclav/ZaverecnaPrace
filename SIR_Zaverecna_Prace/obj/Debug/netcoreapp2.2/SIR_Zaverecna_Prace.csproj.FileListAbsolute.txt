@@ -37,3 +37,10 @@ F:\Visual Studio Projects\.NET Core\SIR_Zaverecna_Prace\SIR_Zaverecna_Prace\obj\
 F:\Visual Studio Projects\.NET Core\SIR_Zaverecna_Prace\SIR_Zaverecna_Prace\obj\Debug\netcoreapp2.2\Razor\Views\Developers\Edit.g.cshtml.cs
 F:\Visual Studio Projects\.NET Core\SIR_Zaverecna_Prace\SIR_Zaverecna_Prace\obj\Debug\netcoreapp2.2\Razor\Views\Games\Edit.g.cshtml.cs
 F:\Visual Studio Projects\.NET Core\SIR_Zaverecna_Prace\SIR_Zaverecna_Prace\obj\Debug\netcoreapp2.2\Razor\Views\Games\Create.g.cshtml.cs
+F:\Visual Studio Projects\.NET Core\SIR_Zaverecna_Prace\SIR_Zaverecna_Prace\obj\Debug\netcoreapp2.2\Razor\Views\Developers\Delete.g.cshtml.cs
+F:\Visual Studio Projects\.NET Core\SIR_Zaverecna_Prace\SIR_Zaverecna_Prace\obj\Debug\netcoreapp2.2\Razor\Views\Developers\Index.g.cshtml.cs
+F:\Visual Studio Projects\.NET Core\SIR_Zaverecna_Prace\SIR_Zaverecna_Prace\obj\Debug\netcoreapp2.2\Razor\Views\Publishers\Index.g.cshtml.cs
+F:\Visual Studio Projects\.NET Core\SIR_Zaverecna_Prace\SIR_Zaverecna_Prace\obj\Debug\netcoreapp2.2\Razor\Views\Publishers\Delete.g.cshtml.cs
+F:\Visual Studio Projects\.NET Core\SIR_Zaverecna_Prace\SIR_Zaverecna_Prace\obj\Debug\netcoreapp2.2\Razor\Views\Games\Index.g.cshtml.cs
+F:\Visual Studio Projects\.NET Core\SIR_Zaverecna_Prace\SIR_Zaverecna_Prace\obj\Debug\netcoreapp2.2\Razor\Views\Games\Delete.g.cshtml.cs
+F:\Visual Studio Projects\.NET Core\SIR_Zaverecna_Prace\SIR_Zaverecna_Prace\obj\Debug\netcoreapp2.2\Razor\Views\Games\Details.g.cshtml.cs

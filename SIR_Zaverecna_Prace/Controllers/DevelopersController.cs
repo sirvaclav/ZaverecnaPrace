@@ -40,7 +40,7 @@ namespace SIR_Zaverecna_Prace.Controllers
                 return NotFound();
             }
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: Developers/Create
@@ -60,7 +60,7 @@ namespace SIR_Zaverecna_Prace.Controllers
             {
                 _context.Add(developer);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction(nameof(Index));
             }
             return View(developer);
         }
@@ -111,7 +111,7 @@ namespace SIR_Zaverecna_Prace.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction(nameof(Index));
             }
             return View(developer);
         }
@@ -142,12 +142,17 @@ namespace SIR_Zaverecna_Prace.Controllers
             var developer = await _context.Developers.FindAsync(id);
             _context.Developers.Remove(developer);
             await _context.SaveChangesAsync();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction(nameof(Index));
         }
 
         private bool DeveloperExists(int id)
         {
             return _context.Developers.Any(e => e.Id == id);
+        }
+
+        public IActionResult Manage()
+        {
+            return RedirectToAction(nameof(Index));
         }
     }
 }
