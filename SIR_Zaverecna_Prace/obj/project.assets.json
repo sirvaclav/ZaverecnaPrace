@@ -12949,11 +12949,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Visual Studio Projects\\.NET Core\\SIR_Zaverecna_Prace\\SIR_Zaverecna_Prace\\SIR_Zaverecna_Prace.csproj",
+      "projectUniqueName": "F:\\Visual Studio Projects\\.NET Core\\SIR_ZavPrace\\SIR_Zaverecna_Prace\\SIR_Zaverecna_Prace.csproj",
       "projectName": "SIR_Zaverecna_Prace",
-      "projectPath": "F:\\Visual Studio Projects\\.NET Core\\SIR_Zaverecna_Prace\\SIR_Zaverecna_Prace\\SIR_Zaverecna_Prace.csproj",
+      "projectPath": "F:\\Visual Studio Projects\\.NET Core\\SIR_ZavPrace\\SIR_Zaverecna_Prace\\SIR_Zaverecna_Prace.csproj",
       "packagesPath": "C:\\Users\\Vašek\\.nuget\\packages\\",
-      "outputPath": "F:\\Visual Studio Projects\\.NET Core\\SIR_Zaverecna_Prace\\SIR_Zaverecna_Prace\\obj\\",
+      "outputPath": "F:\\Visual Studio Projects\\.NET Core\\SIR_ZavPrace\\SIR_Zaverecna_Prace\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
